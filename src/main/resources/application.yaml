@@ -1,6 +1,6 @@
 spring:
   application:
-    name: ${APP_NAME:realtime-chat}
+    name: realtime-chat
 
   server:
     port: ${SERVER_PORT:8888}
@@ -10,9 +10,9 @@ spring:
 
   # Database configuration
   datasource:
-    url: ${DB_URL:jdbc:mysql://localhost:3306/chatapp_db?useSSL=false&serverTimezone=UTC}
-    username: ${DB_USERNAME:root}
-    password: ${DB_PASSWORD:root}
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   # Flyway Configuration
@@ -28,8 +28,13 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true
+    show-sql: false
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
         format_sql: true
+
+  # JWT Configuration
+  jwt:
+    secret: ${JWT_SECRET}
+    expiration: ${JWT_EXPIRATION}
+    refresh-expiration: ${JWT_REFRESH_EXPIRATION}

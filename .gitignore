@@ -32,6 +32,10 @@ build/
 ### VS Code ###
 .vscode/
 
+# Spring profiles
+application-*.yml
+application-*.yaml
+
 ### Environment Variables ###
 .env
 .env.local
